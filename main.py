@@ -56,8 +56,7 @@ def countdown(now, at):
 def check(now):
     global STATUS
 
-    #for at in config.AT_TIMES:
-    for at in [(18, 31), (18, 32),(18,33)]:
+    for at in config.AT_TIMES:
         _countdown = countdown(now, at)
 
         print("at {0}:{1} {2} secs".format(at[0],at[1],_countdown))
