@@ -33,7 +33,8 @@ def init():
 def sendStatus(secs, status):
     try:
         if wifi.connect():
-            url = config.LOG_STATUS_URL.format(secs, status)
+            utcTime = 946684800 + secs - (7*60*60) #convert time to utc
+            url = config.LOG_STATUS_URL.format(utcTime, status)
             req = urequests.get(url)
             req.close()
 
